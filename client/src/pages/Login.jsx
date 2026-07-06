@@ -32,7 +32,7 @@ function Login() {
           JSON.stringify(data.user)
         );
 
-      navigate("/dashboard");
+      window.location.href = "/dashboard";
     } catch (err) {
       alert(
         err.response?.data?.message ||

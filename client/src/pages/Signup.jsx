@@ -29,7 +29,7 @@ function Signup() {
       const data = await signup(form);
       alert(data.message);
 
-      navigate("/login");
+      window.location.href = "/login";
     } catch (err) {
       alert(
         err.response?.data?.message ||
