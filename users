@@ -1,0 +1,14 @@
+{
+  "_id": "u101",
+  "name": "Aditya",
+  "username": "aditya21",
+  "email": "aditya@gmail.com",
+  "password": "Encrypted Password",
+  "profilePic": "profile.jpg",
+  "bio": "Designer",
+  "wallet": 0,
+  "followers": [],
+  "following": [],
+  "savedDesigns": [],
+  "createdAt": "2026-07-06"
+}

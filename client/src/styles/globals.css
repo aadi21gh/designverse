@@ -1,0 +1,17 @@
+.container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.heading {
+  font-family: "Poppins", sans-serif;
+}
+
+.paragraph {
+  font-family: "Inter", sans-serif;
+}

@@ -1,0 +1,18 @@
+{
+  "_id":"p101",
+  "name":"Oversized T-Shirt",
+  "category":"Clothing",
+  "basePrice":499,
+  "colorOptions":[
+      "Black",
+      "White",
+      "Blue"
+  ],
+  "sizes":[
+      "S",
+      "M",
+      "L",
+      "XL"
+  ],
+  "image":"tshirt.png"
+}

@@ -1,0 +1,10 @@
+{
+ "_id":"post1",
+ "designId":"d201",
+ "userId":"u101",
+ "caption":"My first design ❤️",
+ "likes":95,
+ "comments":18,
+ "shares":12,
+ "createdAt":"2026-07-06"
+}

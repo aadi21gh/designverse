@@ -1,0 +1,11 @@
+{
+  "_id":"d201",
+  "userId":"u101",
+  "productId":"p101",
+  "designImage":"design1.png",
+  "text":"Stay Weird",
+  "font":"Poppins",
+  "textColor":"White",
+  "estimatedPrice":799,
+  "isPublic":true
+}
