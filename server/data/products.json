@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Canvas",
+    "category": "Artwork",
+    "basePrice": 799
+  },
+  {
+    "name": "Poster",
+    "category": "Artwork",
+    "basePrice": 399
+  },
+  {
+    "name": "Framed Art",
+    "category": "Artwork",
+    "basePrice": 999
+  },
+  {
+    "name": "Regular T-Shirt",
+    "category": "Clothing",
+    "basePrice": 599
+  },
+  {
+    "name": "Oversized T-Shirt",
+    "category": "Clothing",
+    "basePrice": 699
+  },
+  {
+    "name": "Hoodie",
+    "category": "Clothing",
+    "basePrice": 1299
+  },
+  {
+    "name": "Phone Case",
+    "category": "Accessories",
+    "basePrice": 499
+  },
+  {
+    "name": "Mug",
+    "category": "Accessories",
+    "basePrice": 399
+  },
+  {
+    "name": "Tote Bag",
+    "category": "Accessories",
+    "basePrice": 699
+  }
+]

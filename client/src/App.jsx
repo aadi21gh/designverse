@@ -11,6 +11,7 @@ import Accessories from "./pages/Accessories";
 import Profile from "./pages/Profile";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Route path="/accessories" element={<Accessories />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/cart" element={<Cart />} />
+      <Route path="/dashboard" element={<Dashboard />} />
 
       {/* 404 */}
       <Route path="*" element={<NotFound />} />
