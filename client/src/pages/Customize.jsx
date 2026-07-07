@@ -2,76 +2,50 @@ import { useNavigate } from "react-router-dom";
 
 const categories = [
   {
-    id: 1,
-    name: "Artwork",
-    description: "Create posters, canvas and framed artwork.",
-    route: "/artwork",
-    emoji: "🎨",
+    title: "Artwork",
+    image: "/images/categories/artwork.jpg",
+    route: "/customize/artwork",
   },
   {
-    id: 2,
-    name: "Clothing",
-    description: "Customize t-shirts, hoodies and more.",
-    route: "/clothing",
-    emoji: "👕",
+    title: "Clothing",
+    image: "/images/categories/clothing.jpg",
+    route: "/customize/clothing",
   },
   {
-    id: 3,
-    name: "Accessories",
-    description: "Personalize mugs, phone cases and tote bags.",
-    route: "/accessories",
-    emoji: "🎒",
+    title: "Accessories",
+    image: "/images/categories/accessories.jpg",
+    route: "/customize/accessories",
   },
 ];
 
-function Customize() {
+export default function Customize() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white px-6 py-12">
+    <div className="min-h-screen bg-[#F5F1E8] px-8 py-10">
+      <h1 className="text-4xl font-bold text-center mb-10">
+        Customize Your Product
+      </h1>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="grid md:grid-cols-3 gap-8">
+        {categories.map((item) => (
+          <div
+            key={item.title}
+            onClick={() => navigate(item.route)}
+            className="cursor-pointer rounded-2xl overflow-hidden bg-white shadow-lg hover:scale-105 transition"
+          >
+            <img
+              src={item.image}
+              alt={item.title}
+              className="h-72 w-full object-cover"
+            />
 
-        <h1 className="text-5xl font-bold mb-3">
-          Customize
-        </h1>
-
-        <p className="text-slate-400 mb-12">
-          Choose a category to start designing.
-        </p>
-
-        <div className="grid md:grid-cols-3 gap-8">
-
-          {categories.map((item) => (
-
-            <div
-              key={item.id}
-              onClick={() => navigate(item.route)}
-              className="cursor-pointer rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-blue-500 hover:-translate-y-2 transition duration-300"
-            >
-
-              <div className="text-6xl mb-6">
-                {item.emoji}
-              </div>
-
-              <h2 className="text-3xl font-bold mb-3">
-                {item.name}
-              </h2>
-
-              <p className="text-slate-400">
-                {item.description}
-              </p>
-
+            <div className="p-6 text-center">
+              <h2 className="text-2xl font-semibold">{item.title}</h2>
             </div>
-
-          ))}
-
-        </div>
-
+          </div>
+        ))}
       </div>
-
     </div>
   );
 }
-
-export default Customize;

@@ -1,11 +1,19 @@
 import API from "./api";
 
 export const getAllProducts = async () => {
-  const response = await API.get("/products");
-  return response.data;
+  const { data } = await API.get("/products");
+  return data;
 };
 
 export const getProductsByCategory = async (category) => {
-  const response = await API.get(`/products/${category}`);
-  return response.data;
+  const formattedCategory =
+    category.charAt(0).toUpperCase() + category.slice(1);
+
+  const { data } = await API.get(`/products/${formattedCategory}`);
+  return data;
+};
+
+export const getProductById = async (id) => {
+  const { data } = await API.get(`/products/id/${id}`);
+  return data;
 };

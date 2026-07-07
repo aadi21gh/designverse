@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const productSchema = new mongoose.Schema(
   {
@@ -10,7 +10,11 @@ const productSchema = new mongoose.Schema(
     category: {
       type: String,
       required: true,
-      enum: ["Artwork", "Clothing", "Accessories"],
+      enum: [
+        "Artwork",
+        "Clothing",
+        "Accessories",
+      ],
     },
 
     basePrice: {
@@ -30,7 +34,10 @@ const productSchema = new mongoose.Schema(
 
     status: {
       type: String,
-      enum: ["active", "inactive"],
+      enum: [
+        "active",
+        "inactive",
+      ],
       default: "active",
     },
   },
@@ -39,4 +46,7 @@ const productSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("Product", productSchema);
+export default mongoose.model(
+  "Product",
+  productSchema
+);

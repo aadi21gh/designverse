@@ -1,32 +1,46 @@
-const User = require("../models/User");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+
+import User from "../models/User.js";
 
 // ================= SIGNUP =================
-exports.signup = async (req, res) => {
+export const signup = async (
+  req,
+  res
+) => {
   try {
-    const { name, email, password } = req.body;
+    const {
+      name,
+      email,
+      password,
+    } = req.body;
 
-    // Check all fields
-    if (!name || !email || !password) {
+    if (
+      !name ||
+      !email ||
+      !password
+    ) {
       return res.status(400).json({
-        message: "Please fill all fields",
+        message:
+          "Please fill all fields",
       });
     }
 
-    // Check if user already exists
-    const existingUser = await User.findOne({ email });
+    const existingUser =
+      await User.findOne({
+        email,
+      });
 
     if (existingUser) {
       return res.status(400).json({
-        message: "User already exists",
+        message:
+          "User already exists",
       });
     }
 
-    // Hash Password
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword =
+      await bcrypt.hash(password, 10);
 
-    // Create User
     const user = await User.create({
       name,
       email,
@@ -34,51 +48,66 @@ exports.signup = async (req, res) => {
     });
 
     res.status(201).json({
-      message: "Signup Successful",
+      message:
+        "Signup Successful",
       user,
     });
-
   } catch (error) {
-    console.log(error);
+    console.error(error);
 
     res.status(500).json({
-      message: "Server Error",
+      message:
+        "Server Error",
     });
   }
 };
 
 // ================= LOGIN =================
-exports.login = async (req, res) => {
+export const login = async (
+  req,
+  res
+) => {
   try {
+    const {
+      email,
+      password,
+    } = req.body;
 
-    const { email, password } = req.body;
-
-    // Check fields
-    if (!email || !password) {
+    if (
+      !email ||
+      !password
+    ) {
       return res.status(400).json({
-        message: "Please fill all fields",
+        message:
+          "Please fill all fields",
       });
     }
 
-    // Find user
-    const user = await User.findOne({ email });
+    const user =
+      await User.findOne({
+        email,
+      });
 
     if (!user) {
       return res.status(400).json({
-        message: "User not found",
+        message:
+          "User not found",
       });
     }
 
-    // Compare Password
-    const isMatch = await bcrypt.compare(password, user.password);
+    const isMatch =
+      await bcrypt.compare(
+        password,
+        user.password
+      );
 
     if (!isMatch) {
       return res.status(400).json({
-        message: "Invalid Password",
+        message:
+          "Invalid Password",
       });
     }
 
-    // Generate JWT Token
     const token = jwt.sign(
       {
         id: user._id,
@@ -90,17 +119,17 @@ exports.login = async (req, res) => {
     );
 
     res.status(200).json({
-      message: "Login Successful",
+      message:
+        "Login Successful",
       token,
       user,
     });
-
   } catch (error) {
-
-    console.log(error);
+    console.error(error);
 
     res.status(500).json({
-      message: "Server Error",
+      message:
+        "Server Error",
     });
   }
 };

@@ -12,11 +12,15 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.3.2",
     "axios": "^1.18.1",
+    "fabric": "^7.4.0",
+    "konva": "^10.3.0",
     "lucide-react": "^1.23.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+    "react-konva": "^19.2.5",
     "react-router-dom": "^7.18.1",
-    "tailwindcss": "^4.3.2"
+    "tailwindcss": "^4.3.2",
+    "use-image": "^1.1.4"
   },
   "devDependencies": {
     "@types/react": "^19.2.17",

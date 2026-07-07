@@ -6,13 +6,13 @@ import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import Customize from "./pages/Customize";
 import Explore from "./pages/Explore";
-import Artwork from "./pages/Artwork";
-import Clothing from "./pages/Clothing";
-import Accessories from "./pages/Accessories";
 import Product from "./pages/Product";
 import Profile from "./pages/Profile";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
+
+import CategoryProducts from "./pages/CategoryProducts";
+import DesignStudio from "./pages/DesignStudio";
 
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
@@ -24,7 +24,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
 
-      {/* Protected Routes */}
+      {/* Dashboard */}
       <Route
         path="/dashboard"
         element={
@@ -34,6 +34,7 @@ function App() {
         }
       />
 
+      {/* Customize */}
       <Route
         path="/customize"
         element={
@@ -43,33 +44,17 @@ function App() {
         }
       />
 
+      {/* Category Products */}
       <Route
-        path="/artwork"
+        path="/customize/:category"
         element={
           <ProtectedRoute>
-            <Artwork />
+            <CategoryProducts />
           </ProtectedRoute>
         }
       />
 
-      <Route
-        path="/clothing"
-        element={
-          <ProtectedRoute>
-            <Clothing />
-          </ProtectedRoute>
-        }
-      />
-
-      <Route
-        path="/accessories"
-        element={
-          <ProtectedRoute>
-            <Accessories />
-          </ProtectedRoute>
-        }
-      />
-
+      {/* Existing Product Page */}
       <Route
         path="/product/:id"
         element={
@@ -79,6 +64,17 @@ function App() {
         }
       />
 
+      {/* Design Studio */}
+      <Route
+        path="/design/:productId"
+        element={
+          <ProtectedRoute>
+            <DesignStudio />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Explore */}
       <Route
         path="/explore"
         element={
@@ -88,6 +84,7 @@ function App() {
         }
       />
 
+      {/* Profile */}
       <Route
         path="/profile"
         element={
@@ -97,6 +94,7 @@ function App() {
         }
       />
 
+      {/* Cart */}
       <Route
         path="/cart"
         element={
